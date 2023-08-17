@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <p>Before the script...</p>
+
+    <script>
+      const word = prompt("Enter a word : ");
+
+      const reversed_word = word.split("").reverse().join("");
+
+      if (word === reversed_word) {
+        alert(`${word} is a palindrome.`);
+      } else {
+        alert(`${word} is not a palindrome.`);
+      }
+    </script>
+
+    <p>...After the script.</p>
+  </body>
+</html>

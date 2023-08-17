@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <p>Before the script...</p>
+
+    <script>
+      const rows = parseInt(prompt("Enter the number of rows:"));
+
+      for (let i = 1; i <= rows; i++) {
+        let pattern = "";
+        for (let j = 1; j <= i; j++) {
+          pattern += " * ";
+        }
+        console.log(pattern);
+      }
+    </script>
+
+    <p>...After the script.</p>
+  </body>
+</html>
