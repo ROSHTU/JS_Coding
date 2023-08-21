@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <p>Before the script...</p>
+
+    <script>
+      // Define the Task object
+      function Task(description) {
+        this.description = description;
+        this.completed = false;
+      }
+
+      // Add a method to the Task prototype to mark a task as completed
+      Task.prototype.complete = function () {
+        this.completed = true;
+      };
+
+      // Create an array to hold tasks
+      const tasks = [];
+
+      // Function to add a task to the list
+      function addTask(description) {
+        const task = new Task(description);
+        tasks.push(task);
+      }
+
+      // Function to display the list of tasks
+      function displayTasks() {
+        console.log("To-Do List:");
+        tasks.forEach((task, index) => {
+          const status = task.completed ? "Completed" : "Not Completed";
+          console.log(`${index + 1}. ${task.description} - ${status}`);
+        });
+      }
+
+      // Function to mark a task as completed by its index
+      function completeTask(index) {
+        if (index >= 0 && index < tasks.length) {
+          tasks[index].complete();
+        }
+      }
+
+      // Adding tasks
+      addTask("Buy groceries");
+      addTask("Walk the dog");
+      addTask("Finish homework");
+
+      // Marking a task as completed
+      completeTask(1); // Mark 'Walk the dog' as completed
+
+      // Displaying the list of tasks
+      displayTasks();
+    </script>
+
+    <p>...After the script.</p>
+  </body>
+</html>
